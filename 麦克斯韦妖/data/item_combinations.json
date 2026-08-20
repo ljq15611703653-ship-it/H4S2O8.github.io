@@ -1,0 +1,16 @@
+[
+  {
+    "rule_id": "machine_water_crystal",
+    "members": ["machine", "water", "crystal"],
+    "event": "grow_crystal",
+    "contact_mode": "connected",
+    "priority": 20
+  },
+  {
+    "rule_id": "two_metals_water",
+    "members": ["metal", "metal", "water"],
+    "event": "electrolysis",
+    "contact_mode": "connected",
+    "priority": 20
+  }
+]
