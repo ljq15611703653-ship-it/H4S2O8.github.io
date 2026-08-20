@@ -27,6 +27,7 @@ class Item:
     name: str
     axes: dict[Axis, int] = field(default_factory=dict)
     processes: set[Process] = field(default_factory=set)
+    kind: str = "generic"
 
     def __post_init__(self) -> None:
         for axis in Axis:
