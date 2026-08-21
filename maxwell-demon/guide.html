@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>麦克斯韦妖的燃烧水 — 攻略</title>
+  <style>
+    :root { color-scheme: dark; font-family: "Microsoft YaHei", system-ui, sans-serif; background:#091824; color:#dbe8ed; }
+    body { max-width:900px; margin:0 auto; padding:36px 22px 80px; line-height:1.75; }
+    h1,h2 { color:#f2d57b; font-weight:600; } h1 { line-height:1.25; }
+    h2 { margin-top:34px; border-bottom:1px solid #345267; padding-bottom:8px; }
+    code { background:#152c3b; color:#9de4ef; padding:2px 7px; border-radius:5px; }
+    a { color:#88dbe8; } .warning { color:#f0c675; background:#182a34; border-left:4px solid #d8a94f; padding:12px 16px; }
+    li { margin:7px 0; }
+  </style>
+</head>
+<body>
+  <p><a href="./">← 返回游戏</a></p>
+  <h1>《麦克斯韦妖的燃烧水》攻略</h1>
+  <p class="warning">公开测试版：以下内容包含完整解法。路线一、三、四已在浏览器实机通过；路线二刚修复轻壳逃逸软锁，正在持续回归。</p>
+  <h2>操作</h2>
+  <ul><li><code>A / D</code> 移动，<code>空格</code> 跳跃，<code>E</code> 抓取/放下，<code>R</code> 使用锤子或树脂。</li><li><code>1—5</code>：温度、燃烧性、冻结性、重量、形变；<code>Ctrl</code> 转移负单位，<code>Shift</code> 反转来源与接收者。</li><li><code>C</code> 图鉴，<code>T</code> 重置。</li></ul>
+  <h2>核心规则</h2>
+  <ol><li>只有直接接触的两个碰撞体才能手动转移。</li><li>来源失去什么，接收者才得到什么；从普通物提取正单位会让来源变成相反负物性。</li><li>清空高处门区的有效重物，再让妖怪进入出口即可通关。</li></ol>
+  <h2>路线一：转移重性</h2>
+  <ol><li>把普通接收块沿货运路线送入门旁侧槽，并接触重铁块。</li><li>按 <code>Shift + 4</code>，让铁块把重性转给接收块。</li><li>确认新重物落在侧槽而非门槛，随后进入出口。</li></ol>
+  <h2>路线二：轻物—树脂—重物</h2>
+  <ol><li>到捕轻笼下方拿起树脂。</li><li>手持树脂直接接触笼内轻壳并按 <code>R</code>，轻壳闩和笼口才会打开；再拖动碰撞链接触重铁块并按 <code>R</code>。</li><li>连接中的轻壳把铁块有效重量降为普通，推动它离开门区。</li></ol>
+  <h2>路线三：燃烧支撑</h2>
+  <ol><li>把可燃引火木块送到木支撑旁。</li><li>从普通物提取烫并转给木块，使“烫 + 可燃”立即燃烧。</li><li>木支撑烧穿后门槛倾斜，铁块滑出；进入出口。</li></ol>
+  <h2>路线四：水结冰</h2>
+  <ol><li>跳起取下高处悬挂的可冻结水膜囊。</li><li>把液态水膜送到制冷喷口；“冷 + 可冻结”会立即冻结，并把当时的液体轮廓换成固体碰撞体。</li><li>冰体落入支撑区并顶起门槛，铁块滑出；进入出口。</li></ol>
+  <h2>流动的火</h2>
+  <ol><li>让水从普通物接收可燃性，来源会变成灭火物。</li><li>再让水从另一个普通物接收烫，来源会变冷。</li><li>水立即燃烧，但仍使用守恒网格液体物理：继续受重力改变轮廓、分流、汇合并点燃接触的可燃物。</li></ol>
+  <h2>失败排查</h2>
+  <ul><li>没有直接接触就不会转移。</li><li>新重物放在门槛正中仍会挡门。</li><li>物品变重、冷、烫、燃烧或结冰会立即脱手。</li><li>不同状态液体先发生接触反应，结果完全一致后才汇合。</li></ul>
+</body>
+</html>
