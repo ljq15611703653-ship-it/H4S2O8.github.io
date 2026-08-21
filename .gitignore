@@ -1,0 +1,9 @@
+# Local browser profiles and preview captures
+qa-chrome-profile/
+qa-preview/
+visible-chrome-profile/
+visible-test-profile/
+
+# Godot editor/import cache (source assets and export remain versioned)
+**/.godot/
+

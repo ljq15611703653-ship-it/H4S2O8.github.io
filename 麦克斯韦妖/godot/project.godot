@@ -1,0 +1,76 @@
+; Engine configuration file.
+; Best edited using the editor, but intentionally kept reviewable for this demo.
+config_version=5
+
+[application]
+
+config/name="麦克斯韦妖的燃烧水"
+run/main_scene="res://scenes/main.tscn"
+config/features=PackedStringArray("4.7", "GL Compatibility")
+boot_splash/bg_color=Color(0.025, 0.035, 0.055, 1)
+boot_splash/show_image=false
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/size/window_width_override=1280
+window/size/window_height_override=720
+window/stretch/mode="canvas_items"
+
+[input]
+
+move_left={
+"deadzone": 0.3,
+"events": [Object(InputEventKey,"physical_keycode":65), Object(InputEventKey,"physical_keycode":4194311)]
+}
+move_right={
+"deadzone": 0.3,
+"events": [Object(InputEventKey,"physical_keycode":68), Object(InputEventKey,"physical_keycode":4194313)]
+}
+jump={
+"deadzone": 0.3,
+"events": [Object(InputEventKey,"physical_keycode":32), Object(InputEventKey,"physical_keycode":87), Object(InputEventKey,"physical_keycode":4194320)]
+}
+grab={
+"deadzone": 0.3,
+"events": [Object(InputEventKey,"physical_keycode":69)]
+}
+use_tool={
+"deadzone": 0.3,
+"events": [Object(InputEventKey,"physical_keycode":82)]
+}
+codex={
+"deadzone": 0.3,
+"events": [Object(InputEventKey,"physical_keycode":67)]
+}
+reset_level={
+"deadzone": 0.3,
+"events": [Object(InputEventKey,"physical_keycode":84)]
+}
+
+[gui]
+
+theme/custom="res://assets/fonts/maxwell_theme.tres"
+
+[gui]
+
+theme/custom="res://assets/fonts/maxwell_theme.tres"
+
+[layer_names]
+
+2d_physics/layer_1="World"
+2d_physics/layer_2="Player"
+2d_physics/layer_3="Items"
+
+[physics]
+
+common/physics_ticks_per_second=60
+2d/default_gravity=1300.0
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/default_filters/use_nearest_mipmap_filter=false
+environment/defaults/default_clear_color=Color(0.025, 0.035, 0.055, 1)

@@ -1,0 +1,18 @@
+{
+  "rules": [
+    {
+      "id": "furnace_water",
+      "left_kind": "furnace",
+      "right_kind": "water",
+      "event": "heat_water",
+      "symmetric": true
+    },
+    {
+      "id": "machine_material_example",
+      "left_kind": "machine",
+      "right_kind": "material",
+      "event": "special_machine_reaction",
+      "symmetric": false
+    }
+  ]
+}
