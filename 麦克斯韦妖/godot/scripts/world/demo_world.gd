@@ -74,6 +74,9 @@ func _build_level() -> void:
 	_add_terrain(Vector2(1770, 690), Vector2(1140, 60), Color("#253646"), "")
 	_add_terrain(Vector2(470, 560), Vector2(210, 24), Color("#30495a"), "弹跳实验台", true)
 	_add_terrain(Vector2(730, 470), Vector2(230, 24), Color("#30495a"), "人通道", true)
+	# A forgiving intermediate step keeps the resin route about material handling,
+	# rather than asking the player to balance on the bathtub's narrow rim.
+	_add_terrain(Vector2(900, 425), Vector2(180, 24), Color("#30495a"), "登高踏板", true)
 	_add_terrain(Vector2(1010, 385), Vector2(230, 24), Color("#30495a"), "", true)
 	# 下方开口的捕轻笼：不改变“轻会向上飘”，只用真实地形防止关键物飞出关卡。
 	_add_terrain(Vector2(1000, 205), Vector2(220, 22), Color("#5d7180"), "捕轻笼")

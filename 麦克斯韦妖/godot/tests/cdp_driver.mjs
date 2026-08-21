@@ -9,7 +9,9 @@ const cdpPort = process.env.CDP_PORT || "9223";
 const endpoint = `http://127.0.0.1:${cdpPort}/json/list`;
 
 const pages = await fetch(endpoint).then((response) => response.json());
-const page = pages.find((candidate) => candidate.type === "page" && candidate.url.includes("127.0.0.1:8765"));
+const page = pages.find((candidate) => candidate.type === "page" && (
+  candidate.url.includes("127.0.0.1:8765") || candidate.url.includes("h4s2o8.github.io/maxwell-demon")
+));
 if (!page) throw new Error("Godot Web page is not open on the Chrome debugging port");
 
 const socket = new WebSocket(page.webSocketDebuggerUrl);
@@ -41,7 +43,10 @@ const wait = (milliseconds) => new Promise((resolve) => setTimeout(resolve, mill
 await send("Page.enable");
 await send("Runtime.enable");
 
-if (command === "focus") {
+if (command === "navigate") {
+  await send("Page.navigate", { url: code });
+  await wait(Math.max(duration, 5000));
+} else if (command === "focus") {
   await send("Input.dispatchMouseEvent", { type: "mousePressed", x: 640, y: 360, button: "left", clickCount: 1 });
   await send("Input.dispatchMouseEvent", { type: "mouseReleased", x: 640, y: 360, button: "left", clickCount: 1 });
 } else if (command === "down" || command === "up") {
